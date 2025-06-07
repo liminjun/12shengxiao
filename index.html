@@ -75,6 +75,8 @@
             <!-- Animal Grid -->
             <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 max-w-4xl mx-auto">
             </div>
+            <!-- 添加音频元素 -->
+            <audio style="display: none;" id="animal-audio" controls src=""></audio>
         </section>
 
         <!-- Section 3: The Race Story -->
@@ -103,7 +105,8 @@
                 每一个小朋友都有一个属于自己的生肖动物哦！快去问问爸爸妈妈，你是哪一年出生的，看看你的生肖是哪一个可爱的小动物吧！
             </p>
         </section>
-
+        <section  class="text-center max-w-3xl mx-auto">
+            <a target="_blank" href="https://www.douyin.com/video/7231203509851524389">生肖儿歌</a></section>
     </div>
 
     <footer class="text-center py-6 text-gray-500 text-sm">
@@ -130,6 +133,7 @@
             const grid = document.querySelector('.grid');
             const displayCard = document.getElementById('display-card');
             const displayContent = document.getElementById('display-content');
+            const animalAudio = document.getElementById('animal-audio');
             let animalElements = [];
 
             animals.forEach(animal => {
@@ -147,6 +151,10 @@
             });
 
             function updateDisplay(animal) {
+                // 播放动物的声音
+                animalAudio.src = `./audio/${animal.rank}.mp3`;
+                animalAudio.play();
+
                 displayContent.classList.remove('fade-in');
                 
                 void displayContent.offsetWidth;
