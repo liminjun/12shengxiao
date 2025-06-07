@@ -53,7 +53,7 @@
 
         <!-- Section 1: What is Zodiac? -->
         <section class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl font-bold mb-4 text-sky-500">什么是十二生肖呀？</h2>
+            <h2 class="text-3xl font-bold mb-4 text-sky-500">环节 1：知识介绍，什么是十二生肖呀？</h2>
             <p class="text-lg leading-relaxed">
                 小朋友们好！在很久很久以前，玉皇大帝为了选出12个动物做代表，举办了一场赛跑比赛！这些跑得最快的小动物，就成为了我们的十二生肖。每一年，都会有一个小动物来“值班”，给我们带来好运哦！
             </p>
@@ -61,7 +61,7 @@
 
         <!-- Section 2: Interactive Animals -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-center mb-4 text-emerald-500">快来认识一下这些小动物吧！</h2>
+            <h2 class="text-3xl font-bold text-center mb-4 text-emerald-500">环节 2：互动讲解-快来认识一下这些小动物吧！</h2>
             <p class="text-center text-gray-600 mb-8">点击下面的小动物，看看它有什么特点！</p>
             
             <!-- Display Card -->
@@ -79,17 +79,26 @@
 
         <!-- Section 3: The Race Story -->
         <section class="max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl font-bold text-center mb-8 text-rose-500">赛跑大赛的故事！</h2>
+            <h2 class="text-3xl font-bold text-center mb-8 text-rose-500">环节 3：互动故事-生肖赛跑大赛</h2>
             <div class="space-y-6 text-lg leading-relaxed bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-md">
                 <p>“砰！”比赛开始啦！所有的小动物都飞快地向前跑！</p>
                 <p>跑在最前面的是勤劳的<span class="font-bold text-amber-700">小牛</span>。它埋着头，一步一步跑得很稳。这时候，聪明又机灵的<span class="font-bold text-gray-700">小老鼠</span>想到了一个好办法，它“嗖”地一下跳到了牛伯伯的背上！</p>
                 <p>牛伯伯没有发现，还带着小老鼠一起跑。快到终点的时候，小老鼠从牛背上轻轻一跳，第一个冲过了终点线！就这样，小老鼠成为了十二生肖的<span class="font-bold">第一名</span>，而努力的小牛是<span class="font-bold">第二名</span>！其他的小动物们也陆续到达了终点。</p>
             </div>
         </section>
-
+        <section class="max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-rose-500">环节 4：集体游戏-生肖蹲蹲乐</h2>
+            <div class="space-y-6 text-lg leading-relaxed bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-md">
+                <p>规则：给每个小朋友发一张生肖卡片(或贴额头)，被叫到的“生肖“要快速蹲下并喊下一个动物。</p> 
+                    <ul>
+                        <li>鼠蹲完，龙蹲</li>
+                        <li>龙蹲完，兔蹲</li>
+                    </ul>
+            </div>
+        </section>    
         <!-- Section 4: Who is your sign? -->
         <section class="text-center max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold mb-4 text-violet-500">你是什么生肖呢？</h2>
+            <h2 class="text-3xl font-bold mb-4 text-violet-500">环节 5：你是什么生肖呢？</h2>
             <p class="text-lg leading-relaxed bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-md">
                 每一个小朋友都有一个属于自己的生肖动物哦！快去问问爸爸妈妈，你是哪一年出生的，看看你的生肖是哪一个可爱的小动物吧！
             </p>
@@ -98,24 +107,24 @@
     </div>
 
     <footer class="text-center py-6 text-gray-500 text-sm">
-        <p>为幼儿园中班小朋友设计的十二生肖互动小乐园</p>
+        <p>2021-<script>document.write(new Date().getFullYear())</script> @Copyright 两本书</p>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const animals = [
-                { name: '鼠', emoji: '🐭', rank: 1, trait: '聪明机灵小老鼠！' },
-                { name: '牛', emoji: '🐮', rank: 2, trait: '勤劳能干大力牛！' },
-                { name: '虎', emoji: '🐯', rank: 3, trait: '威风凛凛大老虎！' },
-                { name: '兔', emoji: '🐰', rank: 4, trait: '活泼可爱小兔子！' },
-                { name: '龙', emoji: '🐲', rank: 5, trait: '腾云驾雾大飞龙！' },
-                { name: '蛇', emoji: '🐍', rank: 6, trait: '滑溜溜的小青蛇！' },
-                { name: '马', emoji: '🐴', rank: 7, trait: '奔驰千里千里马！' },
-                { name: '羊', emoji: '🐑', rank: 8, trait: '温顺善良小绵羊！' },
-                { name: '猴', emoji: '🐵', rank: 9, trait: '活泼好动小猴子！' },
-                { name: '鸡', emoji: '🐔', rank: 10, trait: '报晓司晨大公鸡！' },
-                { name: '狗', emoji: '🐶', rank: 11, trait: '忠诚守家小狗狗！' },
-                { name: '猪', emoji: '🐷', rank: 12, trait: '憨厚可爱小猪猪！' }
+                { name: '鼠', englishName:'Rat', emoji: '🐭', rank: 1, trait: '聪明机灵小老鼠！' },
+                { name: '牛', englishName: 'Ox', emoji: '🐮', rank: 2, trait: '勤劳能干大力牛！' },
+                { name: '虎', englishName: 'Tiger', emoji: '🐯', rank: 3, trait: '威风凛凛大老虎！' },
+                { name: '兔', englishName: 'Rabbit', emoji: '🐰', rank: 4, trait: '活泼可爱小兔子！' },
+                { name: '龙', englishName: 'Dragon', emoji: '🐲', rank: 5, trait: '腾云驾雾大飞龙！' },
+                { name: '蛇', englishName: 'Snake', emoji: '🐍', rank: 6, trait: '滑溜溜的小青蛇！' },
+                { name: '马', englishName: 'Horse', emoji: '🐴', rank: 7, trait: '奔驰千里千里马！' },
+                { name: '羊', englishName: 'Goat', emoji: '🐑', rank: 8, trait: '温顺善良小绵羊！' },
+                { name: '猴', englishName: 'Monkey', emoji: '🐵', rank: 9, trait: '活泼好动小猴子！' },
+                { name: '鸡', englishName: 'Rooster', emoji: '🐔', rank: 10, trait: '报晓司晨大公鸡！' },
+                { name: '狗', englishName: 'Dog', emoji: '🐶', rank: 11, trait: '忠诚守家小狗狗！' },
+                { name: '猪', englishName: 'Pig', emoji: '🐷', rank: 12, trait: '憨厚可爱小猪猪！' }
             ];
 
             const grid = document.querySelector('.grid');
@@ -126,7 +135,7 @@
             animals.forEach(animal => {
                 const card = document.createElement('div');
                 card.className = 'animal-card bg-white p-4 rounded-xl shadow-md cursor-pointer flex justify-center items-center border-2 border-transparent';
-                card.innerHTML = `<div class="text-5xl">${animal.emoji}</div>`;
+                card.innerHTML = `<div class="text-xl">${animal.rank}  </div><div class="text-5xl">${animal.emoji}</div>`;
                 card.addEventListener('click', () => {
                     updateDisplay(animal);
                     
@@ -144,7 +153,7 @@
 
                 displayContent.innerHTML = `
                     <div class="text-7xl mb-2">${animal.emoji}</div>
-                    <h3 class="text-3xl font-bold text-gray-800">${animal.name}</h3>
+                    <h3 class="text-3xl font-bold text-gray-800">${animal.name} (${animal.englishName})</h3>
                     <p class="text-xl text-amber-600 font-semibold">第 ${animal.rank} 名</p>
                     <p class="text-lg text-gray-600 mt-1">${animal.trait}</p>
                 `;
