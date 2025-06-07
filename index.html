@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>十二生肖互动小乐园</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Playful Pastels -->
+    <!-- Application Structure Plan: The application uses a single-page, vertical scroll structure to tell a linear story, which is ideal for young children. It begins with a welcoming hero section, explains the concept, then moves to the main interactive element: a clickable animal gallery. This 'discovery' based interaction is more engaging than a static list. The story of the race is woven in, culminating in a visual "finish line". This structure turns passive listening (like a PPT) into active exploration, making it more memorable and fun. -->
+    <!-- Visualization & Content Choices: Report Info: List of 12 animals & traits. -> Goal: Inform, Engage. -> Viz/Method: Interactive emoji grid. -> Interaction: Click/tap to reveal details in a central card. -> Justification: More engaging than a list for kids. -> Library: Vanilla JS. | Report Info: Race story. -> Goal: Narrate. -> Viz/Method: Story text blocks with large emojis. -> Justification: Narrative format is best for storytelling. -> Library: N/A. | Report Info: Zodiac order. -> Goal: Reinforce learning. -> Viz/Method: Finish line display. -> Justification: Visually confirms the race outcome. -> Library: N/A. This design prioritizes simple, tactile interaction over complex charts, which suits the target audience and content. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #FFFBF5;
+            color: #4A5568;
+        }
+        .animal-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .animal-card:hover {
+            transform: scale(1.08);
+        }
+        .animal-card.active {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(253, 230, 138, 0.8);
+            border-color: #FBBF24;
+        }
+        .content-card {
+            transition: all 0.5s ease-in-out;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(200, 200, 200, 0.3);
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto px-4 py-8 md:py-12">
+
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold text-amber-500">十二生肖小乐园</h1>
+            <p class="text-lg md:text-xl mt-4 text-gray-600">一个关于十二只可爱小动物的有趣故事！</p>
+        </header>
+
+        <!-- Section 1: What is Zodiac? -->
+        <section class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold mb-4 text-sky-500">什么是十二生肖呀？</h2>
+            <p class="text-lg leading-relaxed">
+                小朋友们好！在很久很久以前，玉皇大帝为了选出12个动物做代表，举办了一场赛跑比赛！这些跑得最快的小动物，就成为了我们的十二生肖。每一年，都会有一个小动物来“值班”，给我们带来好运哦！
+            </p>
+        </section>
+
+        <!-- Section 2: Interactive Animals -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-4 text-emerald-500">快来认识一下这些小动物吧！</h2>
+            <p class="text-center text-gray-600 mb-8">点击下面的小动物，看看它有什么特点！</p>
+            
+            <!-- Display Card -->
+            <div id="display-card" class="content-card w-full max-w-md mx-auto rounded-2xl shadow-lg p-6 mb-8 min-h-[180px] flex flex-col justify-center items-center text-center">
+                <div id="display-content">
+                    <div class="text-6xl mb-2">🐾</div>
+                    <p class="text-xl text-gray-700">点击一个小动物认识它吧！</p>
+                </div>
+            </div>
+
+            <!-- Animal Grid -->
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 max-w-4xl mx-auto">
+            </div>
+        </section>
+
+        <!-- Section 3: The Race Story -->
+        <section class="max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-rose-500">赛跑大赛的故事！</h2>
+            <div class="space-y-6 text-lg leading-relaxed bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-md">
+                <p>“砰！”比赛开始啦！所有的小动物都飞快地向前跑！</p>
+                <p>跑在最前面的是勤劳的<span class="font-bold text-amber-700">小牛</span>。它埋着头，一步一步跑得很稳。这时候，聪明又机灵的<span class="font-bold text-gray-700">小老鼠</span>想到了一个好办法，它“嗖”地一下跳到了牛伯伯的背上！</p>
+                <p>牛伯伯没有发现，还带着小老鼠一起跑。快到终点的时候，小老鼠从牛背上轻轻一跳，第一个冲过了终点线！就这样，小老鼠成为了十二生肖的<span class="font-bold">第一名</span>，而努力的小牛是<span class="font-bold">第二名</span>！其他的小动物们也陆续到达了终点。</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Who is your sign? -->
+        <section class="text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4 text-violet-500">你是什么生肖呢？</h2>
+            <p class="text-lg leading-relaxed bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-md">
+                每一个小朋友都有一个属于自己的生肖动物哦！快去问问爸爸妈妈，你是哪一年出生的，看看你的生肖是哪一个可爱的小动物吧！
+            </p>
+        </section>
+
+    </div>
+
+    <footer class="text-center py-6 text-gray-500 text-sm">
+        <p>为幼儿园中班小朋友设计的十二生肖互动小乐园</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animals = [
+                { name: '鼠', emoji: '🐭', rank: 1, trait: '聪明机灵小老鼠！' },
+                { name: '牛', emoji: '🐮', rank: 2, trait: '勤劳能干大力牛！' },
+                { name: '虎', emoji: '🐯', rank: 3, trait: '威风凛凛大老虎！' },
+                { name: '兔', emoji: '🐰', rank: 4, trait: '活泼可爱小兔子！' },
+                { name: '龙', emoji: '🐲', rank: 5, trait: '腾云驾雾大飞龙！' },
+                { name: '蛇', emoji: '🐍', rank: 6, trait: '滑溜溜的小青蛇！' },
+                { name: '马', emoji: '🐴', rank: 7, trait: '奔驰千里千里马！' },
+                { name: '羊', emoji: '🐑', rank: 8, trait: '温顺善良小绵羊！' },
+                { name: '猴', emoji: '🐵', rank: 9, trait: '活泼好动小猴子！' },
+                { name: '鸡', emoji: '🐔', rank: 10, trait: '报晓司晨大公鸡！' },
+                { name: '狗', emoji: '🐶', rank: 11, trait: '忠诚守家小狗狗！' },
+                { name: '猪', emoji: '🐷', rank: 12, trait: '憨厚可爱小猪猪！' }
+            ];
+
+            const grid = document.querySelector('.grid');
+            const displayCard = document.getElementById('display-card');
+            const displayContent = document.getElementById('display-content');
+            let animalElements = [];
+
+            animals.forEach(animal => {
+                const card = document.createElement('div');
+                card.className = 'animal-card bg-white p-4 rounded-xl shadow-md cursor-pointer flex justify-center items-center border-2 border-transparent';
+                card.innerHTML = `<div class="text-5xl">${animal.emoji}</div>`;
+                card.addEventListener('click', () => {
+                    updateDisplay(animal);
+                    
+                    animalElements.forEach(el => el.classList.remove('active'));
+                    card.classList.add('active');
+                });
+                grid.appendChild(card);
+                animalElements.push(card);
+            });
+
+            function updateDisplay(animal) {
+                displayContent.classList.remove('fade-in');
+                
+                void displayContent.offsetWidth;
+
+                displayContent.innerHTML = `
+                    <div class="text-7xl mb-2">${animal.emoji}</div>
+                    <h3 class="text-3xl font-bold text-gray-800">${animal.name}</h3>
+                    <p class="text-xl text-amber-600 font-semibold">第 ${animal.rank} 名</p>
+                    <p class="text-lg text-gray-600 mt-1">${animal.trait}</p>
+                `;
+                displayContent.classList.add('fade-in');
+            }
+        });
+    </script>
+
+</body>
+</html>
