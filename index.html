@@ -43,24 +43,36 @@
 </head>
 <body class="antialiased">
 
-    <div class="container mx-auto px-4 py-8 md:py-12">
+    <div class="snap-y snap-mandatory h-screen w-full overflow-y-auto">
+        <style>
+            .screen-1 { background-color: #FFD6D6; }
+            .screen-2 { background-color: #D6FFD6; }
+            .screen-3 { background-color: #D6F0FF; }
+            .screen-4 { background-color: #E6D6FF; }
+            .screen-5 { background-color: #FFD6F0; }
+            .screen-content { max-width: 800px; width: 100%; margin: 0 auto; padding: 0 20px; }
+        </style>
 
-        <!-- Header -->
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-6xl font-bold text-amber-500">十二生肖小乐园</h1>
-            <p class="text-lg md:text-xl mt-4 text-gray-600">一个关于十二只可爱小动物的有趣故事！</p>
-        </header>
+        
 
         <!-- Section 1: What is Zodiac? -->
-        <section class="text-center max-w-3xl mx-auto mb-16">
+        <section class="snap-start h-screen w-full flex flex-col justify-center items-center px-4 py-12 screen-1">
+            <div class="screen-content">
+            <!-- Header -->
+            <header class="text-center mb-12">
+                <h1 class="text-4xl md:text-6xl font-bold text-amber-500">十二生肖小乐园</h1>
+                <p class="text-lg md:text-xl mt-4 text-gray-600">一个关于十二只可爱小动物的有趣故事！</p>
+            </header>
             <h2 class="text-3xl font-bold mb-4 text-sky-500">环节 1：知识介绍，什么是十二生肖呀？</h2>
-            <p class="text-lg leading-relaxed">
+            <p class="space-y-6 bg-white/70 backdrop-blur-sm text-lg leading-relaxed p-8 rounded-2xl">
                 小朋友们好！在很久很久以前，玉皇大帝为了选出12个动物做代表，举办了一场赛跑比赛！这些跑得最快的小动物，就成为了我们的十二生肖。每一年，都会有一个小动物来“值班”，给我们带来好运哦！
             </p>
+            </div>
         </section>
 
         <!-- Section 2: Interactive Animals -->
-        <section class="mb-16">
+        <section class="snap-start h-screen w-full flex flex-col justify-center items-center px-4 py-12 screen-2">
+            <div class="screen-content">
             <h2 class="text-3xl font-bold text-center mb-4 text-emerald-500">环节 2：互动讲解-快来认识一下这些小动物吧！</h2>
             <p class="text-center text-gray-600 mb-8">点击下面的小动物，看看它有什么特点！</p>
             
@@ -77,18 +89,22 @@
             </div>
             <!-- 添加音频元素 -->
             <audio style="display: none;" id="animal-audio" controls src=""></audio>
+            </div>
         </section>
 
         <!-- Section 3: The Race Story -->
-        <section class="max-w-3xl mx-auto mb-16">
+        <section class="snap-start h-screen w-full flex flex-col justify-center items-center px-4 py-12 screen-3">
+            <div class="screen-content">
             <h2 class="text-3xl font-bold text-center mb-8 text-rose-500">环节 3：互动故事-生肖赛跑大赛</h2>
             <div class="space-y-6 text-lg leading-relaxed bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-md">
                 <p>“砰！”比赛开始啦！所有的小动物都飞快地向前跑！</p>
                 <p>跑在最前面的是勤劳的<span class="font-bold text-amber-700">小牛</span>。它埋着头，一步一步跑得很稳。这时候，聪明又机灵的<span class="font-bold text-gray-700">小老鼠</span>想到了一个好办法，它“嗖”地一下跳到了牛伯伯的背上！</p>
                 <p>牛伯伯没有发现，还带着小老鼠一起跑。快到终点的时候，小老鼠从牛背上轻轻一跳，第一个冲过了终点线！就这样，小老鼠成为了十二生肖的<span class="font-bold">第一名</span>，而努力的小牛是<span class="font-bold">第二名</span>！其他的小动物们也陆续到达了终点。</p>
             </div>
+            </div>
         </section>
-        <section class="max-w-3xl mx-auto mb-16">
+        <section class="snap-start h-screen w-full flex flex-col justify-center items-center px-4 py-12 screen-4">
+            <div class="screen-content">
             <h2 class="text-3xl font-bold text-center mb-8 text-rose-500">环节 4：集体游戏-生肖蹲蹲乐</h2>
             <div class="space-y-6 text-lg leading-relaxed bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-md">
                 <p>规则：给每个小朋友发一张生肖卡片(或贴额头)，被叫到的“生肖“要快速蹲下并喊下一个动物。</p> 
@@ -97,21 +113,25 @@
                         <li>龙蹲完，兔蹲</li>
                     </ul>
             </div>
+            </div>
         </section>    
         <!-- Section 4: Who is your sign? -->
-        <section class="text-center max-w-3xl mx-auto">
+        <section class="snap-start h-screen w-full flex flex-col justify-center items-center px-4 py-12 screen-5">
+            <div class="screen-content">
             <h2 class="text-3xl font-bold mb-4 text-violet-500">环节 5：你是什么生肖呢？</h2>
             <p class="text-lg leading-relaxed bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-md">
                 每一个小朋友都有一个属于自己的生肖动物哦！快去问问爸爸妈妈，你是哪一年出生的，看看你的生肖是哪一个可爱的小动物吧！
             </p>
+            <button onclick="window.open('https://www.douyin.com/video/7231203509851524389', '_blank')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
+  <span class="text-xl mr-2">🎵</span>
+  生肖儿歌
+</button>
+            </div>
         </section>
-        <section  class="text-center max-w-3xl mx-auto">
-            <a target="_blank" href="https://www.douyin.com/video/7231203509851524389">生肖儿歌</a></section>
+        
     </div>
 
-    <footer class="text-center py-6 text-gray-500 text-sm">
-        <p>2021-<script>document.write(new Date().getFullYear())</script> @Copyright 两本书</p>
-    </footer>
+    
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -136,10 +156,12 @@
             const animalAudio = document.getElementById('animal-audio');
             let animalElements = [];
 
-            animals.forEach(animal => {
+            // 随机排序数组
+            const shuffledAnimals = [...animals].sort(() => Math.random() - 0.5);
+            shuffledAnimals.forEach(animal => {
                 const card = document.createElement('div');
                 card.className = 'animal-card bg-white p-4 rounded-xl shadow-md cursor-pointer flex justify-center items-center border-2 border-transparent';
-                card.innerHTML = `<div class="text-xl">${animal.rank}  </div><div class="text-5xl">${animal.emoji}</div>`;
+                card.innerHTML = `<div class="text-5xl">${animal.emoji}</div>`;
                 card.addEventListener('click', () => {
                     updateDisplay(animal);
                     
